@@ -35,8 +35,15 @@ namespace Ui {
 QT_END_NAMESPACE
 
 class MainWindow : public QMainWindow {
+   Q_OBJECT
    public:
    explicit MainWindow(QWidget* parent = nullptr);
+
+   private:
+   bool isValidLink(QString link);
+
+   public slots:
+   void downloadVideo();
 
    private:
    Ui::MainWindow* ui {nullptr};

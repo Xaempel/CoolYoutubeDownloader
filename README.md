@@ -1,6 +1,12 @@
 # CoolYoutubeDowloader
 This is my own youtube downloader working in local
 
+## Disclaimer
+
+This software is intended for **legal use only**.  
+You are responsible for ensuring that you have the rights to download or access any content using this application.  
+The author assumes no liability for any misuse or illegal use of this software.
+
 ## Licenese
 
 This project is licensed under the GNU General Public License version 2. You can find the full text of the license in the LICENSE file.
