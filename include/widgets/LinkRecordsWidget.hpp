@@ -27,27 +27,20 @@
 ******************************************************************************/
 #pragma once
 
-#include <QMainWindow>
+#include <QWidget>
+#include <QFrame>
+#include <QString>
 
 QT_BEGIN_NAMESPACE
 namespace Ui {
-   class MainWindow;
-}
+   class LinkRecordsWidget;
+};
 QT_END_NAMESPACE
 
-class MainWindow : public QMainWindow {
-   Q_OBJECT
+class LinkRecordsWidget : public QFrame {
    public:
-   explicit MainWindow(QWidget* parent = nullptr);
+   LinkRecordsWidget(QWidget* parent = nullptr,const QString record = "");
 
    private:
-   bool isValidLink(QString link);
-
-   public slots:
-   void downloadVideo();
-   void showUsedLinkRecords(int tabIndex);
-
-   private:
-   Ui::MainWindow* ui {nullptr};
-   bool recordsWidgetsUpdated {false};
+   Ui::LinkRecordsWidget *ui {nullptr};
 };

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>LinkRecordsWidget</class>
+ <widget class="QFrame" name="LinkRecordsWidget">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>400</width>
+    <height>148</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Records</string>
+  </property>
+  <property name="frameShadow">
+   <enum>QFrame::Shadow::Plain</enum>
+  </property>
+  <layout class="QHBoxLayout" name="horizontalLayout_2">
+   <item>
+    <layout class="QHBoxLayout" name="RecordsDataLayout">
+     <property name="sizeConstraint">
+      <enum>QLayout::SizeConstraint::SetDefaultConstraint</enum>
+     </property>
+    </layout>
+   </item>
+   <item>
+    <widget class="QPushButton" name="DeleteRecordsButton">
+     <property name="text">
+      <string>Delete Records</string>
+     </property>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
