@@ -122,8 +122,8 @@ li.checked::marker { content: &quot;\2612&quot;; }
             <rect>
              <x>0</x>
              <y>0</y>
-             <width>776</width>
-             <height>491</height>
+             <width>100</width>
+             <height>30</height>
             </rect>
            </property>
            <layout class="QVBoxLayout" name="verticalLayout_4">
@@ -153,24 +153,7 @@ li.checked::marker { content: &quot;\2612&quot;; }
   <widget class="QStatusBar" name="statusbar"/>
  </widget>
  <resources/>
- <connections>
-  <connection>
-   <sender>DowloadButton</sender>
-   <signal>clicked()</signal>
-   <receiver>MainWindow</receiver>
-   <slot>downloadVideo()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>92</x>
-     <y>157</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>399</x>
-     <y>299</y>
-    </hint>
-   </hints>
-  </connection>
- </connections>
+ <connections/>
  <slots>
   <slot>downloadVideo()</slot>
   <slot>showUsedLinkRecords()</slot>

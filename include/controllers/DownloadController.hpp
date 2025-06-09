@@ -27,24 +27,17 @@
 ******************************************************************************/
 #pragma once
 
-#include "../include/controllers/DownloadController.hpp"
-#include <QMainWindow>
+#include <QString>
 
-QT_BEGIN_NAMESPACE
-namespace Ui {
-   class MainWindow;
-}
-QT_END_NAMESPACE
-
-class MainWindow : public QMainWindow {
-   Q_OBJECT
+class DownloadController {
    public:
-   explicit MainWindow(QWidget* parent = nullptr);
-
-   public slots:
-   void showUsedLinkRecords(int tabIndex);
+   void DownloadVideo(QString url);
+   [[nodiscard]] bool getRecordsWidgetUpdatedState();
+   void setRecordsWidgetUpdatedState(bool newValue);
 
    private:
-   Ui::MainWindow* ui {nullptr};
-   DownloadController downloadController;
+   bool isValidLink(QString link);
+
+   private:
+   bool recordsWidgetsUpdated {false};
 };
