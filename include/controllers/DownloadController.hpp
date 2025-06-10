@@ -32,6 +32,8 @@
 class DownloadController {
    public:
    void DownloadVideo(QString url);
+   void DownloadVideosBasedOnFile(QString pathToFile);
+
    [[nodiscard]] bool getRecordsWidgetUpdatedState();
    void setRecordsWidgetUpdatedState(bool newValue);
 

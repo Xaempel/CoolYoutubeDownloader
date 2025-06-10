@@ -19,7 +19,36 @@ MainWindow::MainWindow(QWidget* parent)
       downloadController.DownloadVideo(ui->urlInputBox->text());
       ui->urlInputBox->setText("");
    });
+
+   QObject::connect(multiDownloadingFromFileButton, &QPushButton::clicked, this, [this]() {
+      QString filePath = QFileDialog::getOpenFileName(nullptr, "Select file for downloading operation", QDir::homePath(), "Text Files (*.txt)");
+      QFileInfo fileInfo(filePath);
+      multiDownloadingSelectedFileLabel->setText("Your file name " + fileInfo.fileName());
+
+      downloadController.DownloadVideosBasedOnFile(filePath);
+   });
+
+   ui->MultiDownloadingMainLayoutEnabled->addWidget(multiDownloadingFromFileButton);
+   multiDownloadingFromFileButton->hide();
+   ui->MultiDownloadingMainLayoutEnabled->addWidget(multiDownloadingSelectedFileLabel);
+   multiDownloadingSelectedFileLabel->hide();
    DownloadedVideoDbModel::initDownloadedVideoDb();
+}
+
+void MainWindow::changeMultiDownloadingfromFile()
+{
+   if (multiDownloadingModeState == false) {
+      multiDownloadingFromFileButton->show();
+      multiDownloadingSelectedFileLabel->show();
+
+      multiDownloadingModeState = true;
+   }
+   else {
+      multiDownloadingFromFileButton->hide();
+      multiDownloadingSelectedFileLabel->hide();
+
+      multiDownloadingModeState = false;
+   }
 }
 
 void MainWindow::showUsedLinkRecords(int tabIndex)

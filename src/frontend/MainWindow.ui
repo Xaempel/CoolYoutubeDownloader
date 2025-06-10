@@ -88,6 +88,27 @@
          </widget>
         </item>
         <item row="3" column="1">
+         <layout class="QHBoxLayout" name="MultiDownloadingMainLayout">
+          <item>
+           <widget class="QCheckBox" name="enableMultiDownloadingCheckBox">
+            <property name="text">
+             <string>Enable multi downloading from link </string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <layout class="QHBoxLayout" name="MultiDownloadingMainLayoutEnabled"/>
+          </item>
+          <item>
+           <widget class="QPushButton" name="additionalInfoaboutMultiDownloadingButton">
+            <property name="text">
+             <string>More information about this mode</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+        <item row="4" column="1">
          <widget class="QTextBrowser" name="DisclaimerText">
           <property name="html">
            <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
@@ -153,9 +174,27 @@ li.checked::marker { content: &quot;\2612&quot;; }
   <widget class="QStatusBar" name="statusbar"/>
  </widget>
  <resources/>
- <connections/>
+ <connections>
+  <connection>
+   <sender>enableMultiDownloadingCheckBox</sender>
+   <signal>clicked(bool)</signal>
+   <receiver>MainWindow</receiver>
+   <slot>changeMultiDownloadingfromFile()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>150</x>
+     <y>193</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>399</x>
+     <y>299</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
  <slots>
   <slot>downloadVideo()</slot>
   <slot>showUsedLinkRecords()</slot>
+  <slot>changeMultiDownloadingfromFile()</slot>
  </slots>
 </ui>

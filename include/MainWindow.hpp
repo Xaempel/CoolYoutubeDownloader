@@ -28,7 +28,10 @@
 #pragma once
 
 #include "../include/controllers/DownloadController.hpp"
+
+#include <QLabel>
 #include <QMainWindow>
+#include <QPushButton>
 
 QT_BEGIN_NAMESPACE
 namespace Ui {
@@ -43,8 +46,14 @@ class MainWindow : public QMainWindow {
 
    public slots:
    void showUsedLinkRecords(int tabIndex);
+   void changeMultiDownloadingfromFile();
 
    private:
    Ui::MainWindow* ui {nullptr};
    DownloadController downloadController;
+
+   QPushButton* multiDownloadingFromFileButton {new QPushButton("Select file", nullptr)};
+   QLabel* multiDownloadingSelectedFileLabel {new QLabel("", nullptr)};
+
+   bool multiDownloadingModeState {false};
 };
