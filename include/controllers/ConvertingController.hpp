@@ -27,36 +27,10 @@
 ******************************************************************************/
 #pragma once
 
-#include "../include/controllers/DownloadController.hpp"
-#include "../include/controllers/ConvertingController.hpp"
+#include <QString>
 
-#include <QLabel>
-#include <QMainWindow>
-#include <QPushButton>
-
-QT_BEGIN_NAMESPACE
-namespace Ui {
-   class MainWindow;
-}
-QT_END_NAMESPACE
-
-class MainWindow : public QMainWindow {
-   Q_OBJECT
-   public:
-   explicit MainWindow(QWidget* parent = nullptr);
-
-   public slots:
-   void showUsedLinkRecords(int tabIndex);
-   void changeMultiDownloadingfromFile();
-   void initConvertFile();
-
-   private:
-   Ui::MainWindow* ui {nullptr};
-   DownloadController downloadController;
-   ConvertingController convertingController;
-
-   QPushButton* multiDownloadingFromFileButton {new QPushButton("Select file", nullptr)};
-   QLabel* multiDownloadingSelectedFileLabel {new QLabel("", nullptr)};
-
-   bool multiDownloadingModeState {false};
+class ConvertingController{
+    public:
+    void convertVideotoMP3(QString filePath);
+    void convertVideotoWAV(QString filePath);
 };

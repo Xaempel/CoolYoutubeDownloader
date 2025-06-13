@@ -7,6 +7,7 @@
 #include <QFileDialog>
 #include <QMessageBox>
 #include <QProcess>
+#include <qfiledialog.h>
 
 MainWindow::MainWindow(QWidget* parent)
     : QMainWindow(parent)
@@ -76,5 +77,22 @@ void MainWindow::showUsedLinkRecords(int tabIndex)
          }
       }
       downloadController.setRecordsWidgetUpdatedState(true);
+   }
+}
+
+void MainWindow::initConvertFile()
+{
+   QString outputFormat = ui->OutputFileFormat->currentText();
+
+   const char* outputMP3Format = "MP3";
+   const char* outputWAVFormat = "WAV";
+
+   QString filePath = QFileDialog::getOpenFileName(nullptr,"Audio file to convert");
+
+   if (outputFormat == outputMP3Format) {
+      convertingController.convertVideotoMP3(filePath);
+   }
+   else if (outputFormat == outputWAVFormat) {
+      convertingController.convertVideotoWAV(filePath);
    }
 }

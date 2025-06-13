@@ -14,7 +14,7 @@ include(cmake/qt_setup.cmake)
 include(cmake/sqlite3_setup.cmake)
 include(cmake/path.cmake)
 
-add_executable(${PROJECT_NAME} ${HPP_FILES} ${CPP_FILES}     ) 
+add_executable(${PROJECT_NAME} ${HPP_FILES} ${CPP_FILES}) 
 
 config_sqlite3(${PROJECT_NAME})
 setup_target(${PROJECT_NAME})

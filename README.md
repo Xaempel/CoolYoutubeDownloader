@@ -1,4 +1,5 @@
 # CoolYoutubeDowloader
+
 This is my own youtube downloader working in local
 
 ## Disclaimer
@@ -7,9 +8,9 @@ This software is intended for **legal use only**.
 You are responsible for ensuring that you have the rights to download or access any content using this application.  
 The author assumes no liability for any misuse or illegal use of this software.
 
-## Licenese
+## License
 
-This project is licensed under the GNU General Public License version 2. You can find the full text of the license in the LICENSE file.
+This project is licensed under the GNU General Public License version 2. You can find the full text of the license in the [LICENSE file.](LICENSE)
 
 ## System Requirements
 
@@ -22,6 +23,7 @@ This project is licensed under the GNU General Public License version 2. You can
 - Git Version 2.49.0 or later
 - Clang-format Version 19.1.7 or later
 - yt-dlp 2025.05.22 or later
+- ffmpeg Version n7.1.1 or later
 
 ## Tools and Dependencies
 
@@ -43,12 +45,21 @@ This project is licensed under the GNU General Public License version 2. You can
   [Clang-format reference](https://clang.llvm.org/docs/ClangFormat.html)
 
 [External dependencies]
-- [yt-dlp version 2025.05.22 or later](https://github.com/yt-dlp/yt-dlp): This tool is used in this project for download video from yt 
+
+- [yt-dlp version 2025.05.22 or later](https://github.com/yt-dlp/yt-dlp): This tool is used in this project for download video from yt
+
+  [ffmpeg source of n7.1.1](https://ffmpeg.org/releases/ffmpeg-7.1.1.tar.xz)
+  - [ffmpeg](https://www.ffmpeg.org/): This project uses the ffmpeg command-line tool (version 7.1.1 or later) as an external process to handle audio and video operations.  
+    You are responsible for having a legal copy of ffmpeg installed.  
+    ffmpeg is licensed under either the GNU LGPL v2.1 or the GNU GPL v2 depending on its build options.  
+    See the [ffmpeg licensing page](https://ffmpeg.org/legal.html) for details.
+    [ffmpeg source](https://github.com/FFmpeg/FFmpeg): is available on LGPLv2.1 or GPLv2
+
+    **This project does not include or distribute FFmpeg, it only calls the FFmpeg executable as an external program.**
 
 ## Authors
 
 - [Xaempel]
-
 
 ## Contact
 

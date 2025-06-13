@@ -3,6 +3,7 @@ set(HPP_FILES
     include/MainWindow.hpp
     include/widgets/LinkRecordsWidget.hpp
     include/controllers/DownloadController.hpp
+    include/controllers/ConvertingController.hpp
 )
 
 set(CPP_FILES
@@ -11,4 +12,5 @@ set(CPP_FILES
     src/MainWindow.cpp
     src/widgets/LinkRecordsWidget.cpp
     src/controllers/DownloadController.cpp
+    src/controllers/ConvertingController.cpp
 )
