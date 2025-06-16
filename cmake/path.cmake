@@ -4,6 +4,7 @@ set(HPP_FILES
     include/widgets/LinkRecordsWidget.hpp
     include/controllers/DownloadController.hpp
     include/controllers/ConvertingController.hpp
+    include/widgets/MultiDownloadigInfoWidget.hpp
 )
 
 set(CPP_FILES
@@ -13,4 +14,5 @@ set(CPP_FILES
     src/widgets/LinkRecordsWidget.cpp
     src/controllers/DownloadController.cpp
     src/controllers/ConvertingController.cpp
+    src/widgets/MultiDownloadigInfoWidget.cpp
 )

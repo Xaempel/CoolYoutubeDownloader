@@ -248,11 +248,28 @@ li.checked::marker { content: &quot;\2612&quot;; }
     </hint>
    </hints>
   </connection>
+  <connection>
+   <sender>additionalInfoaboutMultiDownloadingButton</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>showMultiDownloadingInfo()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>391</x>
+     <y>270</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>399</x>
+     <y>299</y>
+    </hint>
+   </hints>
+  </connection>
  </connections>
  <slots>
   <slot>downloadVideo()</slot>
   <slot>showUsedLinkRecords()</slot>
   <slot>changeMultiDownloadingfromFile()</slot>
   <slot>initConvertFile()</slot>
+  <slot>showMultiDownloadingInfo()</slot>
  </slots>
 </ui>

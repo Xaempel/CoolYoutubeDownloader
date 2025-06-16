@@ -27,41 +27,19 @@
 ******************************************************************************/
 #pragma once
 
-#include "../include/controllers/ConvertingController.hpp"
-#include "../include/controllers/DownloadController.hpp"
-#include "../include/widgets/LinkRecordsWidget.hpp"
-#include "../include/widgets/MultiDownloadigInfoWidget.hpp"
-
-#include <QLabel>
-#include <QMainWindow>
-#include <QPushButton>
+#include <QWidget>
+#include <QFrame>
 
 QT_BEGIN_NAMESPACE
 namespace Ui {
-   class MainWindow;
+   class MultiDownloadigInfoWidget;
 }
 QT_END_NAMESPACE
 
-class MainWindow : public QMainWindow {
-   Q_OBJECT
+class MultiDownloadigInfoWidget : public QFrame {
    public:
-   explicit MainWindow(QWidget* parent = nullptr);
-
-   public slots:
-   void showUsedLinkRecords(int tabIndex);
-   void changeMultiDownloadingfromFile();
-   void initConvertFile();
-   void deleteRecordWidget(LinkRecordsWidget* instanceToDelete);
-   void showMultiDownloadingInfo();
+   MultiDownloadigInfoWidget(QWidget* parent = nullptr);
 
    private:
-   Ui::MainWindow* ui {nullptr};
-   DownloadController downloadController;
-   ConvertingController convertingController;
-
-   QPushButton* multiDownloadingFromFileButton {new QPushButton("Select file", nullptr)};
-   QLabel* multiDownloadingSelectedFileLabel {new QLabel("", nullptr)};
-   MultiDownloadigInfoWidget* multiDownloadingInfoWidget {new MultiDownloadigInfoWidget(nullptr)};
-
-   bool multiDownloadingModeState {false};
+   Ui::MultiDownloadigInfoWidget* ui {nullptr};
 };

@@ -106,3 +106,7 @@ void MainWindow::deleteRecordWidget(LinkRecordsWidget* instanceToDelete)
    DownloadedVideoDbModel::deleteRecordFromDB(instanceToDelete->getRecordsID());
    instanceToDelete->deleteLater();
 }
+
+void MainWindow::showMultiDownloadingInfo(){
+   multiDownloadingInfoWidget->show();
+}
