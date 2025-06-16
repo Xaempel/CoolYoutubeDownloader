@@ -34,5 +34,25 @@
   </layout>
  </widget>
  <resources/>
- <connections/>
+ <connections>
+  <connection>
+   <sender>DeleteRecordsButton</sender>
+   <signal>clicked()</signal>
+   <receiver>LinkRecordsWidget</receiver>
+   <slot>emitDeleteRecord()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>298</x>
+     <y>73</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>199</x>
+     <y>73</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+ <slots>
+  <slot>emitDeleteRecord()</slot>
+ </slots>
 </ui>

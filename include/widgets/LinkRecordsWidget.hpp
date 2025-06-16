@@ -38,9 +38,21 @@ namespace Ui {
 QT_END_NAMESPACE
 
 class LinkRecordsWidget : public QFrame {
+   Q_OBJECT
    public:
    LinkRecordsWidget(QWidget* parent = nullptr,const QString record = "");
 
+   int getRecordsID();
+   void setRecordsID(int ID);
+
+
+   private slots:
+   void emitDeleteRecord();
+
+   signals:
+   void deletingRecord(LinkRecordsWidget* instanceToDelete);
+
    private:
    Ui::LinkRecordsWidget *ui {nullptr};
+   int RecordsID {1};
 };

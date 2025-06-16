@@ -27,10 +27,15 @@
 ******************************************************************************/
 #pragma once
 
+#include <QByteArray>
 #include <QStringList>
 #include <sqlite3.h>
 #include <stdexcept>
-#include <QByteArray>
+
+struct Record {
+   int id;
+   QString link;
+};
 
 class DownloadedVideoDbModel {
    public:
@@ -60,37 +65,59 @@ class DownloadedVideoDbModel {
       const char* query  = "INSERT INTO used_link (link) VALUES (?);";
       sqlite3_prepare_v2(db, query, -1, &stmt, nullptr);
 
-      QByteArray utfData = Records.toUtf8();
+      QByteArray utfData         = Records.toUtf8();
       const char* recordsUtfData = utfData.constData();
 
-      sqlite3_bind_text(stmt,1,recordsUtfData, -1, SQLITE_STATIC);
+      sqlite3_bind_text(stmt, 1, recordsUtfData, -1, SQLITE_STATIC);
       sqlite3_step(stmt);
       sqlite3_finalize(stmt);
 
       sqlite3_close(db);
    }
 
-   static QStringList getRecords(){
-      QStringList records;
-      sqlite3_open(dbName,&db);
+   static QVector<Record> getRecords()
+   {
+      QVector<Record> records;
 
-      sqlite3_stmt * stmt {nullptr};
-      const char* query = "SELECT link FROM used_link";
-      sqlite3_prepare_v2(db, query, -1, &stmt, nullptr);;
+      sqlite3_open(dbName, &db);
+
+      sqlite3_stmt* stmt = nullptr;
+      const char* query  = "SELECT id, link FROM used_link"; 
+      sqlite3_prepare_v2(db, query, -1, &stmt, nullptr);
 
       while (sqlite3_step(stmt) == SQLITE_ROW) {
-         const unsigned char *text = sqlite3_column_text(stmt, 0);
-         if(text){
-            records.append(QString((const char*)text));
+         int id                    = sqlite3_column_int(stmt, 0);
+         const unsigned char* text = sqlite3_column_text(stmt, 1);
+
+         if (text) {
+            Record r {};
+            r.id   = id;
+            r.link = QString(reinterpret_cast<const char*>(text));
+            records.append(r);
          }
       }
 
       sqlite3_finalize(stmt);
       sqlite3_close(db);
+
       return records;
+   }
+
+   static void deleteRecordFromDB(int idRecordToDelete)
+   {
+      sqlite3_open(dbName, &db);
+
+      sqlite3_stmt* stmt {nullptr};
+      const char* query = "DELETE FROM used_link WHERE id=?;";
+      sqlite3_prepare_v2(db, query, -1, &stmt, nullptr);
+      sqlite3_bind_int(stmt, 1, idRecordToDelete);
+      sqlite3_step(stmt);
+
+      sqlite3_finalize(stmt);
+      sqlite3_close(db);
    }
 
    private:
    static sqlite3* db;
-   static const char *dbName;
+   static const char* dbName;
 };

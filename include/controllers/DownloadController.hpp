@@ -27,6 +27,7 @@
 ******************************************************************************/
 #pragma once
 
+#include  <QVector>
 #include <QString>
 
 class DownloadController {

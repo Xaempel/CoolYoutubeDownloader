@@ -29,6 +29,7 @@
 
 #include "../include/controllers/DownloadController.hpp"
 #include "../include/controllers/ConvertingController.hpp"
+#include "../include/widgets/LinkRecordsWidget.hpp"
 
 #include <QLabel>
 #include <QMainWindow>
@@ -49,6 +50,7 @@ class MainWindow : public QMainWindow {
    void showUsedLinkRecords(int tabIndex);
    void changeMultiDownloadingfromFile();
    void initConvertFile();
+   void deleteRecordWidget(LinkRecordsWidget* instanceToDelete);
 
    private:
    Ui::MainWindow* ui {nullptr};
