@@ -13,6 +13,34 @@
   <property name="windowTitle">
    <string>MainWindow</string>
   </property>
+  <property name="styleSheet">
+   <string notr="true">#urlInputBox{
+	border-radius: 2px;
+	border: 1px solid rgb(0, 0, 0);
+}
+
+QPushButton {
+    background-color: white;
+    border-radius: 2px;
+    border: 2px solid rgb(0, 0, 0);
+}
+
+QWidget{
+	background-color: rgb(157, 157, 157);
+	color: rgb(255, 255, 255);
+	border: 1px solid rgb(0, 0, 0);
+}
+
+QPushButton:hover{
+	background-color: rgb(207, 255, 185);
+	border-radius: 2px;
+	color: black;
+}
+
+QTextBrowser{
+		border: 1px none rgb(0, 0, 0);
+}</string>
+  </property>
   <widget class="QWidget" name="centralwidget">
    <layout class="QVBoxLayout" name="verticalLayout">
     <item>
@@ -143,8 +171,8 @@ li.checked::marker { content: &quot;\2612&quot;; }
             <rect>
              <x>0</x>
              <y>0</y>
-             <width>776</width>
-             <height>491</height>
+             <width>86</width>
+             <height>16</height>
             </rect>
            </property>
            <layout class="QVBoxLayout" name="verticalLayout_4">
@@ -208,7 +236,7 @@ li.checked::marker { content: &quot;\2612&quot;; }
      <x>0</x>
      <y>0</y>
      <width>800</width>
-     <height>30</height>
+     <height>32</height>
     </rect>
    </property>
   </widget>

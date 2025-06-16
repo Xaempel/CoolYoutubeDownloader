@@ -13,6 +13,27 @@
   <property name="windowTitle">
    <string>Records</string>
   </property>
+  <property name="styleSheet">
+   <string notr="true">QPushButton {
+    background-color: white;
+    border-radius: 2px;
+    border: 2px solid rgb(0, 0, 0);
+}
+
+QWidget{
+	background-color: rgb(157, 157, 157);
+	color: rgb(255, 255, 255);
+	border: 1px solid rgb(0, 0, 0);
+}
+
+QPushButton:hover{
+	background-color: rgb(207, 255, 185);
+	border-radius: 2px;
+	color: black;
+}
+
+</string>
+  </property>
   <property name="frameShadow">
    <enum>QFrame::Shadow::Plain</enum>
   </property>
